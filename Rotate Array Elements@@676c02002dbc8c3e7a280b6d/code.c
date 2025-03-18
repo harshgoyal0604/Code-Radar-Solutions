@@ -14,9 +14,8 @@ void reverse(int arr[], int start, int end) {
 // Function to rotate the array to the right by K positions
 void rotateArray(int arr[], int n, int k) {
     k = k % n; // Handle cases where k >= n
-    
-    if (k == 0) return; // No rotation needed if k is 0 or multiple of n
-    
+    if (k == 0) return; // No rotation needed
+
     // Step 1: Reverse the entire array
     reverse(arr, 0, n - 1);
     // Step 2: Reverse the first k elements
@@ -28,26 +27,30 @@ void rotateArray(int arr[], int n, int k) {
 int main() {
     int n, k;
 
-    // Read input size
+    // Read the size of the array
     scanf("%d", &n);
     int arr[n];
 
-    // Read array elements
+    // Read the array elements
     for (int i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
-    // Read number of rotations
+    // Read the number of positions to rotate
     scanf("%d", &k);
 
     // Rotate the array
     rotateArray(arr, n, k);
 
-    // Print rotated array
+    // Print rotated array (without extra space at the end)
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d", arr[i]);
+        if (i < n - 1) {
+            printf(" "); // Print space except after the last element
+        }
     }
     printf("\n");
 
     return 0;
 }
+
