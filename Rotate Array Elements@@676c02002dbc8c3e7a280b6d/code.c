@@ -42,14 +42,10 @@ int main() {
     // Rotate the array
     rotateArray(arr, n, k);
 
-    // Print rotated array (without extra space at the end)
+    // Print rotated array (each number in a new line)
     for (int i = 0; i < n; i++) {
-        printf("%d", arr[i]);
-        if (i < n - 1) {
-            printf(" "); // Print space except after the last element
-        }
+        printf("%d\n", arr[i]);
     }
-    printf("\n");
 
     return 0;
 }
